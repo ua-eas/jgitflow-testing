@@ -6,7 +6,16 @@
 	<artifactId>gs-maven</artifactId>
 	<packaging>jar</packaging>
 	<version>0.1.0</version>
+	
+	    <groupId>external.atlassian.jgitflow</groupId>
+    <artifactId>jgitflow-parent</artifactId>
+    <version>1.0-m5.1</version>
 
+	  <name>JGitFlow Parent</name>
+    <description>The parent pom for the Jgit Flow project</description>
+    <url>https://www.bitbucket.org/atlassian/jgit-flow</url>
+
+	
 	<dependencies>
 		<!-- tag::joda[] -->
 		<dependency>
@@ -47,26 +56,21 @@
 					</execution>
 				</executions>
 			</plugin>
-			<plugin>
-                <groupId>external.atlassian.jgitflow</groupId>
-                <artifactId>jgitflow-maven-plugin</artifactId>
-                <version>1.0-m5.1</version>
-                <configuration>
-                    <!-- Keep maven submodules at the same version as the parent POM -->
-                    <autoVersionSubmodules>true</autoVersionSubmodules>
-                    <pushFeatures>true</pushFeatures>
-                    <pushReleases>true</pushReleases>
-                    <pushHotfixes>true</pushHotfixes>
-                    <!-- Prevents deployments from dev workstations so that they can be done
-                         by CI server -->
-                    <noDeploy>true</noDeploy>
-                    <flowInitContext>
-                        <developBranchName>development</developBranchName>
-                        <masterBranchName>master</masterBranchName>
-                    </flowInitContext>
-                    <allowSnapshots>true</allowSnapshots>
-                </configuration>
-            </plugin>
+			 <plugin>
+            <groupId>external.atlassian.jgitflow</groupId>
+            <artifactId>jgitflow-maven-plugin</artifactId>
+            <version>1.0-m5.1</version>
+            <configuration>
+               <flowInitContext>
+         <masterBranchName>master</masterBranchName>
+         <developBranchName>development</developBranchName>
+         <featureBranchPrefix>feature-</featureBranchPrefix>
+         <releaseBranchPrefix>release-</releaseBranchPrefix>
+         <hotfixBranchPrefix>hotfix-</hotfixBranchPrefix>
+         <versionTagPrefix>blither-</versionTagPrefix>
+       </flowInitContext>
+            </configuration>
+        </plugin>
 		</plugins>
 	</build>
 
