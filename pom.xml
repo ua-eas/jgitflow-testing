@@ -6,16 +6,7 @@
 	<artifactId>gs-maven</artifactId>
 	<packaging>jar</packaging>
 	<version>0.1.0</version>
-	
-	    <groupId>external.atlassian.jgitflow</groupId>
-    <artifactId>jgitflow-parent</artifactId>
-    <version>1.0-m5.1</version>
 
-	  <name>JGitFlow Parent</name>
-    <description>The parent pom for the Jgit Flow project</description>
-    <url>https://www.bitbucket.org/atlassian/jgit-flow</url>
-
-	
 	<dependencies>
 		<!-- tag::joda[] -->
 		<dependency>
