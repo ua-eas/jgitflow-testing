@@ -25,6 +25,23 @@
           </execution>
         </executions>
       </plugin>
+      <plugin>
+        <groupId>external.atlassian.jgitflow</groupId>
+        <artifactId>jgitflow-maven-plugin</artifactId>
+        <version>1.0-m5.1</version>
+        <configuration>
+          <autoVersionSubmodules>true</autoVersionSubmodules>
+          <pushFeatures>true</pushFeatures>
+          <pushReleases>true</pushReleases>
+          <pushHotfixes>true</pushHotfixes>
+          <noDeploy>true</noDeploy>
+          <flowInitContext>
+            <developBranchName>development</developBranchName>
+            <masterBranchName>master</masterBranchName>
+          </flowInitContext>
+          <allowSnapshots>true</allowSnapshots>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
   <dependencies>

@@ -47,6 +47,26 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+                <groupId>external.atlassian.jgitflow</groupId>
+                <artifactId>jgitflow-maven-plugin</artifactId>
+                <version>1.0-m5.1</version>
+                <configuration>
+                    <!-- Keep maven submodules at the same version as the parent POM -->
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                    <pushFeatures>true</pushFeatures>
+                    <pushReleases>true</pushReleases>
+                    <pushHotfixes>true</pushHotfixes>
+                    <!-- Prevents deployments from dev workstations so that they can be done
+                         by CI server -->
+                    <noDeploy>true</noDeploy>
+                    <flowInitContext>
+                        <developBranchName>development</developBranchName>
+                        <masterBranchName>master</masterBranchName>
+                    </flowInitContext>
+                    <allowSnapshots>true</allowSnapshots>
+                </configuration>
+            </plugin>
 		</plugins>
 	</build>
 
