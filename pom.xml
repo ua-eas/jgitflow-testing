@@ -58,7 +58,7 @@
                         <developBranchName>development</developBranchName>
                         <masterBranchName>master</masterBranchName>
                     </flowInitContext>
-                    <allowSnapshots>false</allowSnapshots>
+                    <allowSnapshots>true</allowSnapshots>
                 </configuration>
 				  <dependencies>
 					<dependency>
