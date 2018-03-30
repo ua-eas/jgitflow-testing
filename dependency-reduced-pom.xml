@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.springframework</groupId>
   <artifactId>gs-maven</artifactId>
-  <version>0.1.0</version>
+  <version>1.1-SNAPSHOT</version>
   <build>
     <plugins>
       <plugin>
@@ -29,12 +29,14 @@
         <groupId>external.atlassian.jgitflow</groupId>
         <artifactId>jgitflow-maven-plugin</artifactId>
         <version>1.0-m5.1</version>
+        <dependencies>
+          <dependency>
+            <groupId>com.jcraft</groupId>
+            <artifactId>jsch</artifactId>
+            <version>0.1.54</version>
+          </dependency>
+        </dependencies>
         <configuration>
-          <autoVersionSubmodules>true</autoVersionSubmodules>
-          <pushFeatures>true</pushFeatures>
-          <pushReleases>true</pushReleases>
-          <pushHotfixes>true</pushHotfixes>
-          <noDeploy>true</noDeploy>
           <flowInitContext>
             <developBranchName>development</developBranchName>
             <masterBranchName>master</masterBranchName>
